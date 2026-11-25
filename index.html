@@ -187,10 +187,10 @@
           </span>
         </h1>
 
-        <!-- 副標題 -->
-        <p class="max-w-2xl mx-auto text-base sm:text-xl text-amber-100/90 font-medium leading-relaxed mb-10 px-2">
-          感謝課長一路以來的霸氣提攜與神級罩護！<br class="hidden sm:inline" />
-          航向全新輝煌航道前夕，船務部全體總動員——<span class="text-amber-300 font-black underline decoration-rose-500 decoration-2 underline-offset-4">今晚不醉不歸、吃到飽為止！</span>
+        <!-- 副標題（第二行在電腦版強制同一行不折行） -->
+        <p class="max-w-4xl mx-auto text-base sm:text-lg md:text-xl text-amber-100/90 font-medium leading-relaxed mb-10 px-2">
+          <span class="block">感謝課長一路以來的霸氣提攜與神級罩護！</span>
+          <span class="block sm:whitespace-nowrap mt-1">航向全新輝煌航道前夕，船務部全體總動員——<span class="text-amber-300 font-black underline decoration-rose-500 decoration-2 underline-offset-4">今晚不醉不歸、吃到飽為止！</span></span>
         </p>
 
         <!-- 活動資訊豪華看板 -->
@@ -243,7 +243,7 @@
       </div>
     </section>
 
-    <!-- 2. 御膳級佳餚巡禮：逸香樓招牌菜色介紹（已精簡為前三道鎮店名菜） -->
+    <!-- 2. 御膳級佳餚巡禮：逸香樓招牌菜色介紹（前三道鎮店名菜） -->
     <section id="menu-section" class="py-16 sm:py-24 px-4 bg-gradient-to-b from-transparent via-amber-950/10 to-transparent border-t border-amber-500/15">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
@@ -258,7 +258,7 @@
           </p>
         </div>
 
-        <!-- 菜色卡片網格（保留前三道精華名菜） -->
+        <!-- 菜色卡片網格 -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <!-- 菜色 1 -->
           <div class="luxury-card rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden">
@@ -371,7 +371,7 @@
                 </div>
               </div>
 
-              <!-- 出席狀態單選 -->
+              <!-- 出席狀態單選（已移除「稍微晚到但一定到！」選項） -->
               <div>
                 <label class="block text-sm font-black text-amber-300 mb-2.5">
                   ⚡ 12/9（三）晚上 18:30 戰力出席狀態 <span class="text-rose-400">*</span>
@@ -381,13 +381,6 @@
                     <input type="radio" name="status" value="on-time" checked class="w-5 h-5 accent-amber-400" />
                     <span class="text-sm sm:text-base font-bold text-white">
                       🔥 準時赴宴！12/9 18:30 準時開吃（準備好大吃加點了！）
-                    </span>
-                  </label>
-
-                  <label class="flex items-center gap-3 p-4 rounded-2xl bg-black/60 border border-amber-500/30 hover:border-amber-400 cursor-pointer transition has-[:checked]:bg-gradient-to-r has-[:checked]:from-amber-500/25 has-[:checked]:to-orange-500/20 has-[:checked]:border-amber-400">
-                    <input type="radio" name="status" value="late" class="w-5 h-5 accent-amber-400" />
-                    <span class="text-sm sm:text-base font-bold text-white">
-                      🍻 稍微晚到但一定到！（幫我留鴨皮跟加點！）
                     </span>
                   </label>
 
@@ -484,17 +477,13 @@
                 ✅ 已複製最新統計戰報！可直接貼到 Teams / LINE 群組！
               </div>
 
-              <!-- 數據卡片 -->
-              <div class="grid grid-cols-3 gap-3 text-center mb-4">
-                <div class="p-3 rounded-2xl bg-gradient-to-b from-rose-500/20 to-black border border-rose-500/40">
+              <!-- 數據卡片（2欄：準時開吃 vs. 含淚缺席） -->
+              <div class="grid grid-cols-2 gap-3 text-center mb-4">
+                <div class="p-3.5 rounded-2xl bg-gradient-to-b from-rose-500/20 to-black border border-rose-500/40">
                   <p class="text-2xl sm:text-3xl font-black text-rose-400" id="count-ontime">0</p>
                   <p class="text-xs font-bold text-gray-300 mt-1">🔥 準時開吃</p>
                 </div>
-                <div class="p-3 rounded-2xl bg-gradient-to-b from-amber-500/20 to-black border border-amber-500/40">
-                  <p class="text-2xl sm:text-3xl font-black text-amber-300" id="count-late">0</p>
-                  <p class="text-xs font-bold text-gray-300 mt-1">🍻 晚到必赴</p>
-                </div>
-                <div class="p-3 rounded-2xl bg-gradient-to-b from-gray-500/20 to-black border border-white/15">
+                <div class="p-3.5 rounded-2xl bg-gradient-to-b from-gray-500/20 to-black border border-white/15">
                   <p class="text-2xl sm:text-3xl font-black text-gray-300" id="count-absent">0</p>
                   <p class="text-xs font-bold text-gray-400 mt-1">😭 含淚缺席</p>
                 </div>
@@ -543,7 +532,7 @@
     // 你的 Google Apps Script 網頁應用程式網址
     // ==========================================
     const GOOGLE_SHEET_EXEC_URL = 'https://script.google.com/macros/s/AKfycbyINVT8XTcHZYv-gTV7rL2ICyUssOZCUhgeaescmt18a32Isalj8Pj6Nzh7DkL2zaFGag/exec';
-    const STORAGE_KEY = 'josh_farewell_votes_2026_sheet_cache_v1';
+    const STORAGE_KEY = 'josh_farewell_votes_2026_sheet_cache_v2';
 
     // ==========================================
     // 1. 動態流金粒子背景動畫 (Canvas Particles)
@@ -661,14 +650,6 @@
         wishlist: ['🦆 烤鴨再來一隻', '🥟 蔥油餅/鍋貼加點'],
         blessing: '聽到吃不飽都可以無限加點我就放心了！課長我一定準時到場幫您敬酒吃到飽！',
         timestamp: '剛剛'
-      },
-      {
-        id: 'seed-3',
-        name: '調度組 乾杯擔當',
-        status: 'late',
-        wishlist: ['🍺 飲料啤酒喝起來', '🦆 烤鴨再來一隻'],
-        blessing: '處理完最後一班船期就飛奔過去！拜託幫我留兩片黃金烤鴨皮，祝課長鵬程萬里！',
-        timestamp: '剛剛'
       }
     ];
 
@@ -703,24 +684,20 @@
     }
 
     function getStatusBadge(status) {
-      if (status === 'on-time') {
-        return '<span class="px-2.5 py-0.5 rounded-full bg-rose-500/20 border border-rose-400/50 text-rose-300 text-xs font-black">🔥 準時開吃</span>';
+      if (status === 'absent') {
+        return '<span class="px-2.5 py-0.5 rounded-full bg-gray-500/20 border border-gray-400/40 text-gray-300 text-xs font-bold">😭 含淚缺席</span>';
       }
-      if (status === 'late') {
-        return '<span class="px-2.5 py-0.5 rounded-full bg-amber-500/20 border border-amber-400/50 text-amber-300 text-xs font-black">🍻 晚到必赴</span>';
-      }
-      return '<span class="px-2.5 py-0.5 rounded-full bg-gray-500/20 border border-gray-400/40 text-gray-300 text-xs font-bold">😭 含淚缺席</span>';
+      return '<span class="px-2.5 py-0.5 rounded-full bg-rose-500/20 border border-rose-400/50 text-rose-300 text-xs font-black">🔥 準時開吃</span>';
     }
 
     function renderDashboard(votes) {
       currentVotes = votes;
-      let ontime = 0, late = 0, absent = 0;
+      let ontime = 0, absent = 0;
       const wishMap = {};
 
       votes.forEach(v => {
-        if (v.status === 'on-time') ontime++;
-        else if (v.status === 'late') late++;
-        else absent++;
+        if (v.status === 'absent') absent++;
+        else ontime++;
 
         if (Array.isArray(v.wishlist)) {
           v.wishlist.forEach(item => {
@@ -732,7 +709,6 @@
       });
 
       document.getElementById('count-ontime').textContent = ontime;
-      document.getElementById('count-late').textContent = late;
       document.getElementById('count-absent').textContent = absent;
       document.getElementById('total-votes').textContent = votes.length;
 
@@ -880,8 +856,7 @@
     // 一鍵複製統計戰報
     function copySummaryToClipboard() {
       const votes = currentVotes;
-      const ontimeList = votes.filter(v => v.status === 'on-time').map(v => v.name);
-      const lateList = votes.filter(v => v.status === 'late').map(v => v.name);
+      const ontimeList = votes.filter(v => v.status !== 'absent').map(v => v.name);
       const absentList = votes.filter(v => v.status === 'absent').map(v => v.name);
 
       const summaryText = [
@@ -890,9 +865,8 @@
         `🏮 地點：逸香樓餐廳 (南京東路二段69號) - 吃不飽無限加點！`,
         `━━━━━━━━━━━━━━`,
         `🔥 準時赴宴 (${ontimeList.length}人)：${ontimeList.join('、') || '尚無'}`,
-        `🍻 晚到必赴 (${lateList.length}人)：${lateList.join('、') || '尚無'}`,
         `😭 含淚缺席 (${absentList.length}人)：${absentList.join('、') || '尚無'}`,
-        `📊 預計出席總戰力：${ontimeList.length + lateList.length} 位好漢！`
+        `📊 預計出席總戰力：${ontimeList.length} 位好漢！`
       ].join('\n');
 
       const tempTextarea = document.createElement('textarea');

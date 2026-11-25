@@ -243,7 +243,7 @@
       </div>
     </section>
 
-    <!-- 2. 御膳級佳餚巡禮：逸香樓招牌菜色介紹 -->
+    <!-- 2. 御膳級佳餚巡禮：逸香樓招牌菜色介紹（已精簡為前三道鎮店名菜） -->
     <section id="menu-section" class="py-16 sm:py-24 px-4 bg-gradient-to-b from-transparent via-amber-950/10 to-transparent border-t border-amber-500/15">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
@@ -258,8 +258,8 @@
           </p>
         </div>
 
-        <!-- 菜色卡片網格 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 菜色卡片網格（保留前三道精華名菜） -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <!-- 菜色 1 -->
           <div class="luxury-card rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden">
             <div class="absolute top-0 right-0 px-3 py-1 bg-gradient-to-l from-amber-500 to-amber-600 text-black text-xs font-black rounded-bl-2xl">
@@ -313,8 +313,8 @@
               <span class="text-xs px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-200 font-bold">#白飯殺手</span>
             </div>
           </div>
+        </div>
 
-          
         <!-- 再次強調醒目橫幅 -->
         <div class="mt-10 rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-amber-500 via-orange-500 to-rose-600 text-white shadow-[0_15px_40px_rgba(225,29,72,0.45)] relative overflow-hidden">
           <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
@@ -877,7 +877,7 @@
       }
     });
 
-    // 一鍵複製統計戰報（使用 execCommand 相容 iframe 環境）
+    // 一鍵複製統計戰報
     function copySummaryToClipboard() {
       const votes = currentVotes;
       const ontimeList = votes.filter(v => v.status === 'on-time').map(v => v.name);
